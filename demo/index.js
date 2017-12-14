@@ -1,10 +1,12 @@
 import Vue from 'vue';
-import TimeAgo from '../lib/timeago-vue.js';
+import TimeAgo from '../lib/timeago-vue.min.js';
 
-console.log(TimeAgo)
-Vue.use(TimeAgo);
+
+Vue.use(TimeAgo)
+
+console.log(TimeAgo);
 new Vue({
-    template: '<timeago :datetime="now"></timeago>',
+    template: '<timeago className="classname" style="width:100px;" :datetime="now"></timeago>',
     el: '#el',
     data() {
         return {

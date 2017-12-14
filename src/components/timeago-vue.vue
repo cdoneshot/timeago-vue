@@ -1,7 +1,5 @@
 <template>
-    <div ref="el" :class="className" :style="style">
-          {{this.timeagoIns.format(this.datetime, locale)}}
-    </div>
+    <div ref="el">{{time}}</div>
 
 </template>
 
@@ -25,13 +23,18 @@ export default {
     timeago.cancel(this.$refs.el);
     this.timeagoIns = null;
   },
+  computed: {
+    time() {
+      return this.timeagoIns.format(this.datetime, this.locale);
+    }
+  },
   methods: {
     render() {
       const { live, datetime, locale } = this;
       timeago.cancel(this.$refs.el);
       if (live) {
         let value = datetime instanceof Date ? datetime.getTime() : datetime;
-        this.$refs.setAttribute("datetime", value);
+        this.$refs.el.setAttribute("datetime", value);
         this.timeagoIns.render(this.$refs.el, locale);
       }
     }
@@ -48,9 +51,7 @@ export default {
     locale: {
       type: String,
       default: "en"
-    },
-    className: String,
-    style: Object
+    }
   }
 };
 </script>

@@ -5,10 +5,10 @@ module.exports = {
   target: 'web',
   profile: true,
   entry: {
-    demo: path.join(__dirname, 'demo/index.js')
+    "demo/demo": path.join(__dirname, '../demo/index.js')
   },
   output: {
-    path: path.join(__dirname, '/demo/'),
+    path: path.join(__dirname, ''),
     filename: '[name].min.js',
   },
   resolve: {
@@ -19,18 +19,18 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader'
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      },
+      {
+        test: /\.vue$/,
+        use: {
+          loader: 'vue-loader'
+        }
       }
-    },
-    {
-      test: /\.vue$/,
-      use: {
-        loader: 'vue-loader'
-      }
-    }
     ]
   }
 }

@@ -2,11 +2,11 @@
   "name": "timeago-vue",
   "version": "1.0.0",
   "description": "timeago-vue",
-  "main": "lib/timeago-vue.js",
+  "main": "lib/timeago-vue.min.js",
   "scripts": {
     "test": "test",
-    "build": "npm run clean && cross-env NODE_ENV=production babel src -d lib",
-    "start": "webpack-dev-server --color --hot --watch --inline",
+    "build": "npm run clean && webpack --color --progress --config build/webpack.build.config.js",
+    "start": "webpack-dev-server --color --hot --watch --inline --config build/webpack.start.config.js",
     "clean": "rimraf lib"
   },
   "repository": {
@@ -29,7 +29,6 @@
   },
   "homepage": "https://github.com/cdoneshot/timeago-vue#readme",
   "dependencies": {
-    "timeago": "^1.6.1",
     "timeago.js": "^3.0.2",
     "vue": "^2.5.10"
   },
