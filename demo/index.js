@@ -1,13 +1,12 @@
 import Vue from 'vue';
-import TimeAgo from '../lib/timeago-vue.min.js';
+import examples from './examples.vue';
 
-
-Vue.use(TimeAgo)
-
-console.log(TimeAgo);
 new Vue({
-    template: '<timeago className="classname" style="width:100px;" :datetime="now"></timeago>',
+    template: '<examples/>',
     el: '#el',
+    components: {
+        examples
+    },
     data() {
         return {
             now: new Date()

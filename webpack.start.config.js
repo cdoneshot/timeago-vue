@@ -5,7 +5,7 @@ module.exports = {
   target: 'web',
   profile: true,
   entry: {
-    "demo/demo": path.join(__dirname, '../demo/index.js')
+    "demo/demo": path.join(__dirname, './demo/index.js')
   },
   output: {
     path: path.join(__dirname, ''),
@@ -19,18 +19,21 @@ module.exports = {
   },
   module: {
     rules: [{
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
-      },
-      {
-        test: /\.vue$/,
-        use: {
-          loader: 'vue-loader'
-        }
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader'
       }
+    },
+    {
+      test: /\.vue$/,
+      use: {
+        loader: 'vue-loader'
+      }
+    }
     ]
+  },
+  devServer: {
+    port: 8080
   }
 }

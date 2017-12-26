@@ -5,8 +5,8 @@
   "main": "lib/timeago-vue.min.js",
   "scripts": {
     "test": "test",
-    "build": "npm run clean && webpack --color --progress --config build/webpack.build.config.js",
-    "start": "webpack-dev-server --color --hot --watch --inline --config build/webpack.start.config.js",
+    "build": "npm run clean && webpack --color --progress --config webpack.build.config.js",
+    "start": "webpack-dev-server --color --hot --watch --inline --config webpack.start.config.js",
     "clean": "rimraf lib"
   },
   "repository": {

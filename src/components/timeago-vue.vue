@@ -1,11 +1,9 @@
 <template>
     <div ref="el">{{time}}</div>
-
 </template>
 
 <script>
 import timeago from "timeago.js";
-
 export default {
   created() {
     this.timeagoIns = null;
@@ -49,8 +47,7 @@ export default {
       default: true
     },
     locale: {
-      type: String,
-      default: "en"
+      type: String
     }
   }
 };
